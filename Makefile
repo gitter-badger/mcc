@@ -2,7 +2,7 @@ CC      = clang
 SA      = scan-build
 TARGET  = mcc
 
-CFLAGS  = -Wall -Isrc
+CFLAGS  = -Wall -Isrc -g
 LDFLAGS = -lpthread -lm
 
 OBJECTS := $(patsubst %.c,%.o,$(wildcard src/*.c))

@@ -7,16 +7,15 @@
 #include "bot.h"
 #include "api.h"
 
-#define SERVER_NAME "10.10.2.16"
+#define SERVER_NAME "10.10.2.179"
 #define DEFAULT_SERVER_PORT 25565
-#define NUM_BOTS 2
+#define NUM_BOTS 1
 
 int main(int argc, char *argv[])
 {
     bot_t *bots[NUM_BOTS];
 
-    bots[0] = init_defender("plants", SERVER_NAME, DEFAULT_SERVER_PORT);
-    bots[1] = init_slave("batman", SERVER_NAME, DEFAULT_SERVER_PORT);
+    bots[0] = init_slave("batman", SERVER_NAME, DEFAULT_SERVER_PORT);
 
     client_run(bots, NUM_BOTS);
     for (int i = 0; i < NUM_BOTS; i++) {
